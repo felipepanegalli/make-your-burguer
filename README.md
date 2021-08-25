@@ -13,7 +13,7 @@ Make your burger is as project for learning a base of Vue 3. It's a very simple 
 
 ## 🏞️ Project Images
 
-![Home](https://github.com/felipepanegalli/make-your-burguer/blob/main/public/img/screenshot1.jpeg?raw=true)
+![Home](https://github.com/felipepanegalli/make-your-burguer/blob/master/public/img/screenshot1.jpeg?raw=true)
 
 ## 🖥️ Technologies applied in this project
 
