@@ -1,8 +1,7 @@
 <template>
   <div>
-    <p>componente de mensagem</p>
     <div>
-      <form id="burger-form">
+      <form id="burger-form" @submit="createBurger">
         <div class="input-container">
           <label for="name">Nome do cliente:</label>
           <input
@@ -18,7 +17,7 @@
           <label for="bread">Selecione o pão:</label>
           <select name="bread" id="bread" v-model="bread">
             <option value="" selected disabled>Selecione o pão</option>
-            <option v-for="bread in breads" :key="bread.id" :value="bread.id">
+            <option v-for="bread in breads" :key="bread.id" :value="bread.tipo">
               {{ bread.tipo }}
             </option>
           </select>
@@ -28,7 +27,7 @@
           <label for="meat">Selecione a carne:</label>
           <select name="meat" id="meat" v-model="meat">
             <option value="" selected disabled>Selecione a carne</option>
-            <option v-for="meat in meats" :key="meat.id" :value="meat.id">
+            <option v-for="meat in meats" :key="meat.id" :value="meat.tipo">
               {{ meat.tipo }}
             </option>
           </select>
@@ -41,7 +40,7 @@
             v-for="option in options"
             :key="option.id"
           >
-            <input type="checkbox" v-model="optionData" :value="option.id" />
+            <input type="checkbox" v-model="optionData" :value="option.tipo" />
             <span :for="option.id">{{ option.tipo }}</span>
           </div>
         </div>
@@ -68,19 +67,54 @@ export default {
       meat: "",
       bread: "",
       optionData: [],
-      status: "Solicitado",
-      msg: null,
     };
   },
   methods: {
     async getIngredients() {
       const req = await axios.get("http://localhost:3000/ingredientes");
       const data = req.data;
-      console.log(data);
-
       this.breads = data.paes;
       this.meats = data.carnes;
       this.options = data.opcionais;
+    },
+    async createBurger(e) {
+      e.preventDefault();
+      const vue = this;
+      const data = {
+        name: this.name,
+        meat: this.meat,
+        bread: this.bread,
+        options: Array.from(this.optionData),
+        status: "Solicitado",
+      };
+
+      await axios
+        .post("http://localhost:3000/burgers", data)
+        .then(function (response) {
+          vue.toastMessage(`Pedido Nº ${response.data.id} realizado com sucesso!`, 'success');
+          vue.clearFields();
+          //response.data
+        })
+        .catch(function (error) {
+          vue.toastMessage('Houve um erro ao criar o pedido! Por favor tente mais tarde.', 'danger');
+          console.error(error);
+        });
+    },
+    clearFields() {
+      this.name = null;
+      this.meat = "";
+      this.bread = "";
+      this.optionData = [];
+    },
+    toastMessage(text, status) {
+      this.$moshaToast(text.toString(), {
+        position: "top-center",
+        type: status.toString(),
+        transition: "bounce",
+        showIcon: true,
+        timeout: 2500,
+        hideProgressBar: false,
+      });
     },
   },
   mounted() {

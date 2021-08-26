@@ -77,5 +77,96 @@
       "tipo": "Finalizado"
     }
   ],
-  "burgers": []
+  "burgers": [
+    {
+      "name": "Felipe Panegalli",
+      "meat": "Alcatra",
+      "bread": "3 Queijos",
+      "options": [
+        "Cheddar",
+        "Salame"
+      ],
+      "status": "Finalizado",
+      "id": 3
+    },
+    {
+      "name": "Felipe Schmitt Panegalli",
+      "meat": "Alcatra",
+      "bread": "3 Queijos",
+      "options": [
+        "Bacon",
+        "Salame"
+      ],
+      "status": "Em produção",
+      "id": 4
+    },
+    {
+      "name": "Felipe Panegalli",
+      "meat": "Alcatra",
+      "bread": "3 Queijos",
+      "options": [
+        "Cheddar",
+        "Tomate"
+      ],
+      "status": "Em produção",
+      "id": 5
+    },
+    {
+      "name": "sdfdsf",
+      "meat": "Picanha",
+      "bread": "Parmesão e Orégano",
+      "options": [
+        "Salame",
+        "Tomate",
+        "Pepino"
+      ],
+      "status": "Em produção",
+      "id": 6
+    },
+    {
+      "name": "Felipe Panegalli",
+      "meat": "Alcatra",
+      "bread": "3 Queijos",
+      "options": [
+        "Cheddar",
+        "Salame"
+      ],
+      "status": "Em produção",
+      "id": 7
+    },
+    {
+      "name": "Felipe Schmitt Panegalli",
+      "meat": "Alcatra",
+      "bread": "Parmesão e Orégano",
+      "options": [
+        "Cheddar",
+        "Salame"
+      ],
+      "status": "Solicitado",
+      "id": 8
+    },
+    {
+      "name": "FELIPE SCHMITT PANEGALLI",
+      "meat": "Alcatra",
+      "bread": "Parmesão e Orégano",
+      "options": [
+        "Bacon",
+        "Salame"
+      ],
+      "status": "Solicitado",
+      "id": 10
+    },
+    {
+      "name": "FELIPE SCHMITT PANEGALLI",
+      "meat": "Alcatra",
+      "bread": "3 Queijos",
+      "options": [
+        "Cheddar",
+        "Salame",
+        "Cebola roxa"
+      ],
+      "status": "Solicitado",
+      "id": 22
+    }
+  ]
 }
