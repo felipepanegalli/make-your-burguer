@@ -23,6 +23,11 @@ Make your burger is as project for learning a base of Vue 3. It's a very simple 
 <span><img alt="CSS3" src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white"/></span>
 <span><img alt="JavaScript" src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/></span>
 
+##### 3rd npm packages
+- Mosha Vue Toastify
+- Vue SweetAlert 2
+- Axios
+
 ### Backend
 
 - Json (Json server)
